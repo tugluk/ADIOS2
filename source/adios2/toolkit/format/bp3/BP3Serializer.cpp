@@ -664,7 +664,7 @@ void BP3Serializer::SerializeDataBuffer(core::IO &io) noexcept
 
     // Finish writing pg group length without record itself
     const uint64_t dataPGLength =
-        position - m_MetadataSet.DataPGLengthPosition - 8;
+        position - m_MetadataSet.DataPGLengthPosition; // - 8;
     helper::CopyToBuffer(buffer, m_MetadataSet.DataPGLengthPosition,
                          &dataPGLength);
 
